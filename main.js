@@ -43,7 +43,7 @@ submit.onclick = function(){
     if(title.value != '' 
     && price.value != '' 
     && categroy.value != ''
-    && newPro.count <=200){
+    && newPro.count <=1000){
         if(mood === 'Create'){
             if(newPro.count >1 ){
             for(let i =0; i<newPro.count;i++ ){
@@ -201,4 +201,21 @@ function searchData(value){
         }
     }
     document.getElementById('tbody').innerHTML = table;
+}
+
+//btn scrool
+let button = document.getElementById('button')
+window.onscroll = () =>{
+    if(window.scrollY > 434){
+        button.classList.remove('hide');
+    }else{
+        button.classList.add('hide')
+    }
+}
+button.onclick =() =>{
+    window.scroll({
+        top:0,
+        left:0,
+        behavior:"smooth"
+    })
 }
